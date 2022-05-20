@@ -15,12 +15,6 @@ $secondaryColor: #3eb41d;
     font-family: 'Roboto', serif;
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
 // ====== TOP LINE START ====== //
 .top-line__container {
     background: $topLineColor;
@@ -106,6 +100,7 @@ header {
         .menu__wrapper{ // first level menu styles
             padding: unset; 
             height: auto;
+            margin-bottom: 0;
             // transition: height 500ms;
             // overflow:hidden;
             li{
