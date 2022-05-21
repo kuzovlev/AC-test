@@ -345,3 +345,17 @@ header {
 }
 
 // ====== VISUAL-ENTRY END ====== //
+
+// ====== TEXTUAL-ENTRY START ====== //
+
+#textual-entry{
+    .textual-entry__heading{
+        font-size: 27px;
+    }
+    .textual-entry__paragraph{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+
+// ====== TEXTUAL-ENTRY END ====== //
