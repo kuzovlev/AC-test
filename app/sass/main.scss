@@ -14,6 +14,13 @@ $secondaryColor: #3eb41d;
     box-sizing: border-box;
     font-family: 'Roboto', serif;
 }
+body{
+    background: $bodyBackground;
+}
+
+section{
+    border-bottom: 3px solid white;
+}
 
 // ====== TOP LINE START ====== //
 .top-line__container {
@@ -275,7 +282,7 @@ header {
 
 #visual-entry {
     display: flex;
-
+    border-bottom: none;
     img {
         width: 70%;
         height: 100%;
@@ -359,3 +366,118 @@ header {
 }
 
 // ====== TEXTUAL-ENTRY END ====== //
+
+// ====== MATERIALS START ====== //
+
+#materials {
+    padding-bottom: 2rem;
+    .materials__heading {
+        font-size: 1.8em;
+        font-weight: normal;
+    }
+
+    .materials__paragraph {
+        font-size: 1.15em;
+        line-height: 1.5;
+    }
+
+    .materials__compare-container {
+        display: flex;
+        flex-wrap: wrap;
+        .materials__compare-item {
+            width: 25%;
+            padding: 0 1rem;
+            border-left: 3px solid white;
+            &:last-of-type{
+                border-right: 3px solid white;
+            }
+            h3{
+                text-align: center;
+            }
+            .materials__image-container {
+                img {
+                    width: 100%;
+                }
+            }
+            .item-inner{
+                p{
+                    font-weight: bold;
+                    position: relative;
+                    &:first-of-type::before{
+                        content: "";
+                        display: block;
+                        width: 40px;
+                        height: 3px;
+                        position: absolute;
+                        top: 23px;
+                        background: white;
+                    }
+                }
+                ul{
+                    height: 130px;
+                    padding: 0;
+                    li{
+                        list-style: none;
+                        position: relative;
+                        padding-left: 20px;
+                        &::before {
+                            font-family: 'Font Awesome 6 Free';
+                            font: var(--fa-font-solid);
+                            content: "\f00c";
+                            margin-right: 5px;
+                            color: $secondaryColor;
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+                a{
+                    color: $secondaryColor;
+                    text-decoration: none;
+                    display: block;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                    &::after{
+                        font-family: 'Font Awesome 6 Free';
+                        font: var(--fa-font-solid);
+                        content: " \f054";
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .materials__compare-container{
+            .materials__compare-item{
+                width: 50%;
+                &:nth-child(even){
+                    border-right: 3px solid white;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .materials__compare-container{
+            .materials__compare-item{
+                border-right: 3px solid white;
+                border-bottom: 3px solid white;
+                width: 100%;
+                padding-bottom: 1.5rem;
+                &:first-of-type{
+                    border-top: 3px solid white;
+                }
+                .materials__image-container{
+                    display: none;
+                }
+                .item-inner{
+                    ul{
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ====== MATERIALS END ====== //
