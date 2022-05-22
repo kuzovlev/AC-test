@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function accordionSection(sectionIdSelector) {
     const items = document.querySelectorAll(
-      sectionIdSelector + ".accordion button"
+      sectionIdSelector + ".accordion .accordion__button"
     );
 
     function toggleAccordion() {
@@ -59,4 +59,53 @@ document.addEventListener("DOMContentLoaded", function () {
   accordionSection("#faq");
   accordionSection("#media");
 
+  // CAROUSEL
+  makeSlider('#slider1');
+  makeSlider('#slider2');
+  makeSlider('#slider3');
+
+  function makeSlider(sliderId) {
+    const carousel = document.querySelector(sliderId);
+    const carouselDots = carousel.querySelectorAll("[js-data-dots]");
+    console.log(carouselDots);
+    let slideIndex = 0;
+
+    function activateSlide(slides) {
+      slides.forEach((slide) => {
+        slide.removeAttribute("data-active-slide");
+      });
+      slides[slideIndex].setAttribute("data-active-slide", true);
+    }
+    function activateDots(dots) {
+      dots.forEach((dot) => {
+        dot.removeAttribute("data-active-dot");
+      });
+      dots[slideIndex].setAttribute("data-active-dot", true);
+    }
+
+    function showslides(carouselWrapper, dots) {
+      const slides = carouselWrapper.querySelectorAll("[js-carousel-item]");
+      activateSlide(slides);
+      activateDots(dots);
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showslides(carousel, carouselDots);
+    }
+
+    function handleDotsClickEvent(dots) {
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          currentSlide(parseInt(dot.dataset.dotsIndex));
+        });
+      });
+    }
+
+    function handleClickEvents() {
+      handleDotsClickEvent(carouselDots);
+      showslides(carousel, carouselDots);
+    }
+    handleClickEvents();
+  }
 });

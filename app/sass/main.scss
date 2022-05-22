@@ -570,68 +570,105 @@ header {
 // ====== ACCORDION START ====== //
 .accordion {
     .accordion-item {
-        button[aria-expanded='true'] {
+        .accordion__button[aria-expanded='true'] {
             background: $additionalColor;
             color: white;
         }
-    }
-    button {
-        background: white;
-        position: relative;
-        display: block;
-        text-align: left;
-        width: 100%;
-        padding: 1rem 1.7rem;
-        margin-bottom: 1rem;
-        font-size: 1.15em;
-        border: none;
-        background: white;
-        outline: none;
-        &:hover,
-        &:focus {
-            cursor: pointer;
+
+        .accordion__button {
+            background: white;
+            position: relative;
+            display: block;
+            text-align: left;
+            width: 100%;
+            padding: 1rem 1.7rem;
+            margin-bottom: 1rem;
+            font-size: 1.15em;
+            border: none;
+            background: white;
+            outline: none;
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+            }
+
+            &::after {
+                font-family: 'Font Awesome 6 Free';
+                font: var(--fa-font-solid);
+                content: '\f078';
+                position: absolute;
+                right: 1rem;
+            }
+
+            &:active {
+                background: $additionalColor;
+            }
         }
-        &::after{
-            font-family: 'Font Awesome 6 Free';
-            font: var(--fa-font-solid);
-            content: '\f078';
-            position: absolute;
-            right: 1rem;
+
+        .accordion__button[aria-expanded='true'] {
+            +.accordion-content {
+                opacity: 1;
+                max-height: max-content;
+                transition: all 200ms linear;
+                will-change: opacity, max-height;
+            }
+
+            &::after {
+                content: '\f077';
+            }
         }
-        &:active{
-            background: $additionalColor;
-        }
-    }
-    button[aria-expanded='true'] {
-        +.accordion-content {
-            opacity: 1;
-            max-height: 9em;
-            transition: all 200ms linear;
+
+        .accordion-content {
+            display: flex;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 200ms linear, max-height 200ms linear;
             will-change: opacity, max-height;
-        }
-        &::after{
-            content: '\f077';
-        }
-    }
-    .accordion-content {
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: opacity 200ms linear, max-height 200ms linear;
-        will-change: opacity, max-height;
-        p {
-            font-size: 1rem;
-            font-weight: 300;
-            margin-top: 0;
+
+            p {
+                font-size: 1rem;
+                font-weight: 300;
+                margin-top: 0;
+                line-height: 1.5;
+            }
+            .accordion-content__text{
+                width: 55%;
+                flex-shrink: 0;
+                span{
+                    font-weight: bold;
+                }
+            }
+            .carousel-wrapper{
+                margin-left: 2rem;
+            }
+            @media screen and (max-width:992px) {
+                flex-wrap: wrap;
+                .accordion-content__text{
+                    width: 100%;
+                }
+                .carousel-wrapper{
+                    margin: 0 auto 1rem auto;
+                    height: 400px;
+                }
+            }
+            @media screen and (max-width:480px) {
+                .carousel-wrapper{
+                    height: 250px;
+                }
+            }
         }
     }
 }
+
 // ====== ACCORDION END ====== //
 
 // ====== MEDIA SECTION START ====== //
 
-#media{
+#media {
     padding-top: 1rem;
 }
 
+@import "../css/slider.css";
 // ====== MEDIA SECTION END ====== //
