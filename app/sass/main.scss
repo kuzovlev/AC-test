@@ -21,6 +21,11 @@ body {
 
 section {
     border-bottom: 3px solid white;
+    h2{
+        font-weight: normal;
+        font-size: 1.8em;
+        margin-bottom: 0.3rem;
+    }
 }
 
 // ====== TOP LINE START ====== //
@@ -39,7 +44,6 @@ section {
             color: #353b41;
 
             &::before {
-                font-family: 'Font Awesome 6 Free';
                 font: var(--fa-font-solid);
                 content: "\f00c";
                 margin-right: 5px;
@@ -149,7 +153,6 @@ header {
 
                     // position: relative;
                     &::after {
-                        font-family: 'Font Awesome 6 Free';
                         font: var(--fa-font-solid);
                         content: "\f0d7";
                         // position: absolute;
@@ -360,11 +363,13 @@ header {
 #textual-entry {
     .textual-entry__heading {
         font-size: 27px;
+        margin-bottom: 0.5em;
     }
 
     .textual-entry__paragraph {
         font-size: 20px;
         line-height: 1.5;
+        margin-top: 0;
     }
 }
 
@@ -383,6 +388,7 @@ header {
     .materials__paragraph {
         font-size: 1.15em;
         line-height: 1.5;
+        margin-top: 0.5rem;
     }
 
     .materials__compare-container {
@@ -400,6 +406,8 @@ header {
 
             h3 {
                 text-align: center;
+                font-weight: normal;
+                margin-top: 0;
             }
 
             .materials__image-container {
@@ -434,7 +442,6 @@ header {
                         padding-left: 20px;
 
                         &::before {
-                            font-family: 'Font Awesome 6 Free';
                             font: var(--fa-font-solid);
                             content: "\f00c";
                             margin-right: 5px;
@@ -453,7 +460,6 @@ header {
                     font-weight: bold;
 
                     &::after {
-                        font-family: 'Font Awesome 6 Free';
                         font: var(--fa-font-solid);
                         content: " \f054";
                         font-size: 12px;
@@ -525,6 +531,10 @@ header {
                 font-weight: bold;
                 font-size: 1.5em;
             }
+            p{
+                line-height: 1.5;
+                margin-top: 0.5rem;
+            }
         }
 
         &:not(:first-of-type) {
@@ -594,7 +604,6 @@ header {
             }
 
             &::after {
-                font-family: 'Font Awesome 6 Free';
                 font: var(--fa-font-solid);
                 content: '\f078';
                 position: absolute;
@@ -672,3 +681,31 @@ header {
 
 @import "../css/slider.css";
 // ====== MEDIA SECTION END ====== //
+
+// ====== BRAND START ====== //
+#brand{
+    .brand__container{
+        margin-top: 1rem;
+        padding: 1rem;
+        background: white;
+        img{
+            width: 100%;
+        }
+        h4{
+            font-weight: normal;
+            font-size: 1.5em;
+            margin: 0.5rem 0;
+            &:before{
+                font: var(--fa-font-solid);
+                content: '\f0a1';
+                margin-right: 5px;
+            }
+        }
+        p{
+            line-height: 1.5;
+            margin-top: .5rem;
+        }
+    }
+}
+
+// ====== BRAND END ====== //
