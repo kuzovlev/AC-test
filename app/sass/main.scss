@@ -684,6 +684,7 @@ header {
 
 // ====== BRAND START ====== //
 #brand{
+    border-bottom: none;
     .brand__container{
         margin-top: 1rem;
         padding: 1rem;
@@ -707,5 +708,25 @@ header {
         }
     }
 }
-
 // ====== BRAND END ====== //
+
+// ====== GET IN TOUCH START ====== //
+#get-in-touch{
+    margin-top: 1rem;
+    .get-in-touch__container{
+        padding: 1em;
+        text-align: center;
+        background: white;
+        h3{
+            margin: 0;
+        }
+        a{
+            color: $additionalColor;
+            font-size: 1.3em;
+        }
+        p{
+            margin: 0;
+        }
+    }
+}
+// ====== GET IN TOUCH END ====== //
