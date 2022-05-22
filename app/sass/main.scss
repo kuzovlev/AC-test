@@ -14,11 +14,12 @@ $secondaryColor: #3eb41d;
     box-sizing: border-box;
     font-family: 'Roboto', serif;
 }
-body{
+
+body {
     background: $bodyBackground;
 }
 
-section{
+section {
     border-bottom: 3px solid white;
 }
 
@@ -283,6 +284,7 @@ header {
 #visual-entry {
     display: flex;
     border-bottom: none;
+
     img {
         width: 70%;
         height: 100%;
@@ -355,11 +357,12 @@ header {
 
 // ====== TEXTUAL-ENTRY START ====== //
 
-#textual-entry{
-    .textual-entry__heading{
+#textual-entry {
+    .textual-entry__heading {
         font-size: 27px;
     }
-    .textual-entry__paragraph{
+
+    .textual-entry__paragraph {
         font-size: 20px;
         line-height: 1.5;
     }
@@ -371,6 +374,7 @@ header {
 
 #materials {
     padding-bottom: 2rem;
+
     .materials__heading {
         font-size: 1.8em;
         font-weight: normal;
@@ -384,26 +388,32 @@ header {
     .materials__compare-container {
         display: flex;
         flex-wrap: wrap;
+
         .materials__compare-item {
             width: 25%;
             padding: 0 1rem;
             border-left: 3px solid white;
-            &:last-of-type{
+
+            &:last-of-type {
                 border-right: 3px solid white;
             }
-            h3{
+
+            h3 {
                 text-align: center;
             }
+
             .materials__image-container {
                 img {
                     width: 100%;
                 }
             }
-            .item-inner{
-                p{
+
+            .item-inner {
+                p {
                     font-weight: bold;
                     position: relative;
-                    &:first-of-type::before{
+
+                    &:first-of-type::before {
                         content: "";
                         display: block;
                         width: 40px;
@@ -413,13 +423,16 @@ header {
                         background: white;
                     }
                 }
-                ul{
+
+                ul {
                     height: 130px;
                     padding: 0;
-                    li{
+
+                    li {
                         list-style: none;
                         position: relative;
                         padding-left: 20px;
+
                         &::before {
                             font-family: 'Font Awesome 6 Free';
                             font: var(--fa-font-solid);
@@ -431,13 +444,15 @@ header {
                         }
                     }
                 }
-                a{
+
+                a {
                     color: $secondaryColor;
                     text-decoration: none;
                     display: block;
                     margin-bottom: 1rem;
                     font-weight: bold;
-                    &::after{
+
+                    &::after {
                         font-family: 'Font Awesome 6 Free';
                         font: var(--fa-font-solid);
                         content: " \f054";
@@ -447,31 +462,37 @@ header {
             }
         }
     }
+
     @media screen and (max-width: 992px) {
-        .materials__compare-container{
-            .materials__compare-item{
+        .materials__compare-container {
+            .materials__compare-item {
                 width: 50%;
-                &:nth-child(even){
+
+                &:nth-child(even) {
                     border-right: 3px solid white;
                 }
             }
         }
     }
+
     @media screen and (max-width: 480px) {
-        .materials__compare-container{
-            .materials__compare-item{
+        .materials__compare-container {
+            .materials__compare-item {
                 border-right: 3px solid white;
                 border-bottom: 3px solid white;
                 width: 100%;
                 padding-bottom: 1.5rem;
-                &:first-of-type{
+
+                &:first-of-type {
                     border-top: 3px solid white;
                 }
-                .materials__image-container{
+
+                .materials__image-container {
                     display: none;
                 }
-                .item-inner{
-                    ul{
+
+                .item-inner {
+                    ul {
                         height: auto;
                     }
                 }
@@ -484,50 +505,133 @@ header {
 
 // ====== SIMPLE CONTENT START ====== //
 
-#simple-content{
-    .simple-content__item{
+#simple-content {
+    .simple-content__item {
         display: flex;
         padding-bottom: 1rem;
-        .image-container, .text-container{
+
+        .image-container,
+        .text-container {
             width: 50%;
-            img{
+
+            img {
                 width: 100%;
             }
         }
-        .text-container{
-            .subline{
+
+        .text-container {
+            .subline {
                 margin: 0;
                 font-weight: bold;
                 font-size: 1.5em;
             }
         }
-        &:not(:first-of-type){
+
+        &:not(:first-of-type) {
             padding-top: 1rem;
         }
-        &:nth-child(odd){
+
+        &:nth-child(odd) {
             flex-direction: row-reverse;
-            .image-container{
+
+            .image-container {
                 margin-left: 1rem;
             }
         }
-        &:nth-child(even){
-            .text-container{
+
+        &:nth-child(even) {
+            .text-container {
                 margin-left: 1rem;
             }
         }
     }
+
     @media screen and (max-width: 768px) {
         flex-wrap: wrap;
-        .simple-content__item{
-            &:nth-child(odd), &:nth-child(even){
+
+        .simple-content__item {
+
+            &:nth-child(odd),
+            &:nth-child(even) {
                 flex-direction: column-reverse;
             }
-            .image-container, .text-container{
+
+            .image-container,
+            .text-container {
                 width: 100%;
-                margin-left: 0!important;
+                margin-left: 0 !important;
             }
         }
     }
 }
 
 // ====== SIMPLE CONTENT END ====== //
+
+// ====== ACCORDION START ====== //
+.accordion {
+    .accordion-item {
+        button[aria-expanded='true'] {
+            background: $additionalColor;
+            color: white;
+        }
+    }
+    button {
+        background: white;
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 1rem 1.7rem;
+        margin-bottom: 1rem;
+        font-size: 1.15em;
+        border: none;
+        background: white;
+        outline: none;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+        }
+        &::after{
+            font-family: 'Font Awesome 6 Free';
+            font: var(--fa-font-solid);
+            content: '\f078';
+            position: absolute;
+            right: 1rem;
+        }
+        &:active{
+            background: $additionalColor;
+        }
+    }
+    button[aria-expanded='true'] {
+        +.accordion-content {
+            opacity: 1;
+            max-height: 9em;
+            transition: all 200ms linear;
+            will-change: opacity, max-height;
+        }
+        &::after{
+            content: '\f077';
+        }
+    }
+    .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-top: 0;
+        }
+    }
+}
+// ====== ACCORDION END ====== //
+
+// ====== MEDIA SECTION START ====== //
+
+#media{
+    padding-top: 1rem;
+}
+
+// ====== MEDIA SECTION END ====== //

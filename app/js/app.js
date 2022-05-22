@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   menuButtonToggler.addEventListener("click", () => {
     menu.classList.toggle("menu__mobile_shown");
     dropDownMenu.forEach((item) => {
-        item.classList.remove('expanded');
-    })
+      item.classList.remove("expanded");
+    });
   });
 
   function calcEntryBlockHeight() {
@@ -35,4 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     true
   );
+
+  function accordionSection(sectionIdSelector) {
+    const items = document.querySelectorAll(
+      sectionIdSelector + ".accordion button"
+    );
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute("aria-expanded");
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute("aria-expanded", "false");
+      }
+
+      if (itemToggle == "false") {
+        this.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    items.forEach((item) => item.addEventListener("click", toggleAccordion));
+  }
+
+  accordionSection("#faq");
+  accordionSection("#media");
+
 });
