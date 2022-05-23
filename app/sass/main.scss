@@ -780,6 +780,15 @@ footer{
             border: 1px solid white;
         }
     }
+    @media screen and (max-width: 480px) {
+        flex-wrap: wrap;
+        p{
+            font-size: 14px;
+        }
+        button{
+            margin-bottom: 14px;
+        }
+    }
 }
 // ====== FOOTER END ====== //
 
