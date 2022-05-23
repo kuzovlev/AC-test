@@ -713,6 +713,7 @@ header {
 // ====== GET IN TOUCH START ====== //
 #get-in-touch{
     margin-top: 1rem;
+    border-bottom: none;
     .get-in-touch__container{
         padding: 1em;
         text-align: center;
@@ -730,3 +731,31 @@ header {
     }
 }
 // ====== GET IN TOUCH END ====== //
+
+// ====== FOOTER START ====== //
+footer{
+    background: $menuColor;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        color: inherit;
+        font-weight: bold;
+    }
+    button{
+        margin-left: 1rem;
+        background: white;
+        height: 30px;
+        border: 1px solid transparent;
+        color: $menuColor;
+        transition: all .5s;
+        &:hover{
+            color: white;
+            background: $menuColor;
+            border: 1px solid white;
+        }
+    }
+}
+// ====== FOOTER END ====== //
+

@@ -108,4 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     handleClickEvents();
   }
+
+  document.querySelector('.call-trigger').addEventListener('click', ()=>{
+      document.querySelector('footer a').click();
+  })
 });
