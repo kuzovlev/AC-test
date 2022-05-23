@@ -612,6 +612,7 @@ header {
 
         .accordion__button {
             background: white;
+            color: black;
             position: relative;
             display: block;
             text-align: left;
@@ -620,7 +621,6 @@ header {
             margin-bottom: 1rem;
             font-size: 1.15em;
             border: none;
-            background: white;
             outline: none;
 
             &:hover,
