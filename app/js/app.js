@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const entryImageHeight =
       document.querySelector(".visual-entry__img").clientHeight;
     const visualEntryUsp = document.querySelectorAll(".visual-entry__usp-item");
+    const singleElemHeight = entryImageHeight > 0 ? entryImageHeight / visualEntryUsp.length + "px" : "135px";
     visualEntryUsp.forEach((item) => {
-        if (entryImageHeight!=0) item.style.setProperty("--elemHeight", entryImageHeight / 4 + "px");
+      item.style.setProperty("--elemHeight", singleElemHeight);
     });
   }
 
@@ -60,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
   accordionSection("#media");
 
   // CAROUSEL
-  makeSlider('#slider1');
-  makeSlider('#slider2');
-  makeSlider('#slider3');
+  makeSlider("#slider1");
+  makeSlider("#slider2");
+  makeSlider("#slider3");
 
   function makeSlider(sliderId) {
     const carousel = document.querySelector(sliderId);
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleClickEvents();
   }
 
-  document.querySelector('.call-trigger').addEventListener('click', ()=>{
-      document.querySelector('footer a').click();
-  })
+  document.querySelector(".call-trigger").addEventListener("click", () => {
+    document.querySelector("footer a").click();
+  });
 });
