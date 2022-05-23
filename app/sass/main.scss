@@ -131,9 +131,6 @@ header {
             padding: unset;
             height: auto;
             margin-bottom: 0;
-
-            // transition: height 500ms;
-            // overflow:hidden;
             li {
                 text-decoration: none;
                 display: inline-block;
@@ -144,18 +141,19 @@ header {
                     text-decoration: none;
                     line-height: 45px;
                     padding: 13px 0;
+                    transition: all .5s;
+                    &:hover{
+                        color: $additionalColor;
+                    }
                 }
 
                 &.menu__dropdown {
                     cursor: pointer;
                     margin-right: unset;
                     padding: 13px 0;
-
-                    // position: relative;
                     &::after {
                         font: var(--fa-font-solid);
                         content: "\f0d7";
-                        // position: absolute;
                         padding-left: 5px;
                     }
 
@@ -207,7 +205,15 @@ header {
             }
         }
     }
-
+    @media screen and (max-width: 1200px){
+        nav{
+            .menu__wrapper {
+                li {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
     @media screen and (max-width: 768px) {
         .header__top {
             .header__search {
