@@ -32,8 +32,8 @@ section {
 .top-line__container {
     background: $topLineColor;
     text-transform: uppercase;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
 
     section {
         display: flex;
@@ -71,7 +71,7 @@ section {
 header {
     background: $menuColor;
     color: white;
-    padding-top: 20px;
+    padding-top: 40px;
 
     .header__top {
         display: flex;
@@ -81,10 +81,16 @@ header {
         .header__search {
             display: flex;
             flex-wrap: wrap;
+            border: none;
+            &:focus-visible{
+                border: none;
+            }
 
             input {
                 width: 300px;
-                height: 40px;
+                height: 35px;
+                padding-left: 15px;
+                color: $menuColor;
             }
 
             button {
@@ -92,9 +98,15 @@ header {
                 color: white;
                 box-shadow: 0 1px 2px rgb(0 0 0 / 30%);
                 border: none;
-                width: 40px;
-                height: 40px;
-                border: none;
+                width: 35px;
+                height: 35px;
+                border: 1px solid transparent;
+                transition: all 0.5s;
+                &:active{
+                    color: $menuColor;
+                    background: white;
+                    border: 1px solid $menuColor
+                }
             }
         }
 
@@ -113,7 +125,8 @@ header {
             }
 
             .basket-icon {
-                font-size: 35px;
+                font-size: 30px;
+                line-height: 1.2;
             }
         }
     }
@@ -131,6 +144,7 @@ header {
             padding: unset;
             height: auto;
             margin-bottom: 0;
+            margin-top: 0.5rem;
             li {
                 text-decoration: none;
                 display: inline-block;
