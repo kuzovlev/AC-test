@@ -49,7 +49,7 @@ function buildcopy() {
 		'app/images/dest/**/*',
 		'app/**/*.html',
 		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
-	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+	.pipe(dest('docs')) // Выгружаем в папку с финальной сборкой
 }
 
 exports.browsersync = browsersync;
