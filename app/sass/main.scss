@@ -297,8 +297,8 @@ header {
     .visual-entry__usp {
         display: flex;
         flex-direction: column;
-        width: 170px;
-        margin: 0 auto;
+        width: 100%;
+        background: white;
 
         .visual-entry__usp-item {
             text-align: center;
@@ -306,6 +306,8 @@ header {
             display: flex;
             flex-wrap: wrap;
             align-content: center;
+            width: 170px;
+            margin: 0 auto;
 
             &:not(:last-of-type) {
                 border-bottom: 2px solid $additionalColor;
