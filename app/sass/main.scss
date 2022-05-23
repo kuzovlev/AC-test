@@ -135,6 +135,7 @@ header {
                 text-decoration: none;
                 display: inline-block;
                 margin-right: 30px;
+                transition: all .5s;
 
                 a {
                     color: white;
@@ -159,6 +160,7 @@ header {
 
                     &.expanded {
                         position: relative;
+                        color: $additionalColor;
                     }
                 }
 
