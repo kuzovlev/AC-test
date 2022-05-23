@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".visual-entry__img").clientHeight;
     const visualEntryUsp = document.querySelectorAll(".visual-entry__usp-item");
     visualEntryUsp.forEach((item) => {
-      item.style.setProperty("--elemHeight", entryImageHeight / 4 + "px");
+        if (entryImageHeight!=0) item.style.setProperty("--elemHeight", entryImageHeight / 4 + "px");
     });
   }
 
@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function makeSlider(sliderId) {
     const carousel = document.querySelector(sliderId);
     const carouselDots = carousel.querySelectorAll("[js-data-dots]");
-    console.log(carouselDots);
     let slideIndex = 0;
 
     function activateSlide(slides) {
