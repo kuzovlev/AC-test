@@ -112,4 +112,20 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".call-trigger").addEventListener("click", () => {
     document.querySelector("footer a").click();
   });
+
+  const scrollTopButton = document.querySelector('.go-up');
+
+  window.addEventListener('scroll', ()=>{
+    if(window.pageYOffset>10){
+        scrollTopButton.classList.add('visible');
+    } else {
+        scrollTopButton.classList.remove('visible');
+    }
+  });
+  scrollTopButton.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+  })
 });
